@@ -5,7 +5,7 @@
 
 # ALB
 resource "aws_security_group" "sg_alb" {
-    description =       "Allows HTTP/HTTPS traffic to the alb from ANYWHERE to ANYWHERE"
+    description =       "Allows HTTP/HTTPS traffic to the alb"
     name =              "${var.environment}_sg_alb"
     vpc_id =            "${aws_vpc.vpc_blaze.id}"
 	
@@ -87,7 +87,7 @@ resource "aws_security_group" "sg_api" {
 
 # Worker SERVER SG
 resource "aws_security_group" "sg_worker" {
-    description =       "Allows SSH traffic to the Worker from Bastion"
+    description =       "Allows Access to Worker"
     name =              "${var.environment}_sg_worker"
     vpc_id =            "${aws_vpc.vpc_blaze.id}"
 	
@@ -178,7 +178,7 @@ resource "aws_security_group" "vsg_base" {
 
 # Bastion
 resource "aws_security_group" "sg_bastion" {
-    description =       "Allows SSH traffic to the Bastion from ANYWHERE to ANYWHERE"
+    description =       "Allows SSH traffic to the Bastion"
     name =              "${var.environment}_sg_bastion"
     vpc_id =            "${aws_vpc.vpc_blaze.id}"
 

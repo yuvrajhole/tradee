@@ -21,7 +21,7 @@ resource "aws_eip" "elastic_ip_nat_gw" {
     vpc = true
 }
 
-resource "aws_eip" "elastic_ip_nat_gw1" {
+resource "aws_eip" "elastic_ip_bastion_host" {
     vpc = true
 }
 

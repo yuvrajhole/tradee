@@ -60,7 +60,7 @@ resource "aws_subnet" "subnet_private_elasticsearch1" {
     availability_zone = "${var.az_1}"
 
     tags {
-        Name = "${var.environment}-elasticsearch"-1a"
+        Name = "${var.environment}-elasticsearch-1a"
         Environment = "${var.environment}"
 #        Version = "${var.version}"
     }
@@ -72,7 +72,7 @@ resource "aws_subnet" "subnet_private_elasticsearch2" {
     availability_zone = "${var.az_2}"
 
     tags {
-        Name = "${var.environment}-elasticsearch"-1b"
+        Name = "${var.environment}-elasticsearch-1b"
         Environment = "${var.environment}"
 #        Version = "${var.version}"
     }

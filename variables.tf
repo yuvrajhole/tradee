@@ -27,9 +27,9 @@ variable "blaze_e"          { default = "10.1.15.0/24"  description = "Blaze rds
 #Region & Availability Zones
 #variable "aws_region"       { default = "us-east-1"  description = "PROD region 1" }
 variable "aws_region"       { default = "eu-central-1"  description = "PROD region 2" }
-variable "az_1"             { default = "us-central-1a"  description = "PROD az 1" }
-variable "az_2"             { default = "us-central-1b"  description = "PROD az 2" }
-variable "az_3"             { default = "us-central-1c"  description = "PROD az 3" }
+variable "az_1"             { default = "eu-central-1a"  description = "PROD az 1" }
+variable "az_2"             { default = "eu-central-1b"  description = "PROD az 2" }
+variable "az_3"             { default = "eu-central-1c"  description = "PROD az 3" }
 
 #variable "az_1"             { default = "us-east-1a"  description = "PROD az 1" }
 #variable "az_2"             { default = "us-east-1b"  description = "PROD az 2" }

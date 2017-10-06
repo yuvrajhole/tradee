@@ -24,6 +24,11 @@ resource "aws_instance" "ec2_bastion" {
     }
 }
 
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = "${aws_instance.ec2_bastion.id}"
+  allocation_id = "${aws_eip.elastic_ip_bastion_host.id}"
+}
+
 # Outputs
 
 output "Bastion SSH" {
