@@ -22,7 +22,8 @@ variable "blaze_c"          { default = "10.1.13.0/24"  description = "Blaze wor
 variable "blaze_c1"         { default = "10.1.23.0/24"  description = "Blaze worker Subnet C1" }
 variable "blaze_d"          { default = "10.1.14.0/24"  description = "Blaze rds Subnet D" }
 variable "blaze_d1"         { default = "10.1.24.0/24"  description = "Blaze rds Subnet D1" }
-variable "blaze_e"          { default = "10.1.15.0/24"  description = "Blaze rdsreplica Subnet E" }
+variable "blaze_f"          { default = "10.1.15.0/24"  description = "Blaze redis Subnet F" }
+variable "blaze_f1"         { default = "10.1.25.0/24"  description = "Blaze redis Subnet F1" }
 
 #Region & Availability Zones
 #variable "aws_region"       { default = "us-east-1"  description = "PROD region 1" }
@@ -55,7 +56,7 @@ variable "instance_type" {
 }
 
 ##Key Pair
-variable "key_name"      { default = "201710tradeekey"  description = "Create and Download the mentioned key before applying" }
+variable "key_name"      { default = "20171010-awsprodkey"  description = "Create and Download the mentioned key before applying" }
 
 variable "ssh_user"      { default = "ubuntu"   description = "ssh user" }
 

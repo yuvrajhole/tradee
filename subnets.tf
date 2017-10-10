@@ -54,6 +54,31 @@ resource "aws_subnet" "subnet_private_api2" {
     }
 }
 
+resource "aws_subnet" "subnet_private_redis1" {
+    vpc_id = "${aws_vpc.vpc_blaze.id}"
+    cidr_block = "${var.blaze_f}"
+    availability_zone = "${var.az_2}"
+
+    tags {
+        Name = "${var.environment}-redis-1b"
+        Environment = "${var.environment}"
+#        Version = "${var.version}"
+    }
+}
+
+resource "aws_subnet" "subnet_private_redis2" {
+    vpc_id = "${aws_vpc.vpc_blaze.id}"
+    cidr_block = "${var.blaze_f1}"
+    availability_zone = "${var.az_2}"
+
+    tags {
+        Name = "${var.environment}-redis-1b"
+        Environment = "${var.environment}"
+#        Version = "${var.version}"
+    }
+}
+
+
 resource "aws_subnet" "subnet_private_elasticsearch1" {
     vpc_id = "${aws_vpc.vpc_blaze.id}"
     cidr_block = "${var.blaze_b}"
@@ -127,14 +152,14 @@ resource "aws_subnet" "subnet_private_rds2" {
     }
 }
 
-resource "aws_subnet" "subnet_private_rdsrr" {
-    vpc_id = "${aws_vpc.vpc_blaze.id}"
-    cidr_block = "${var.blaze_e}"
-    availability_zone = "${var.az_3}"
+#resource "aws_subnet" "subnet_private_rdsrr" {
+#    vpc_id = "${aws_vpc.vpc_blaze.id}"
+#    cidr_block = "${var.blaze_e}"
+#    availability_zone = "${var.az_3}"
 
-    tags {
-        Name = "${var.environment}-subnet-rdsreplica"
-        Environment = "${var.environment}"
+#    tags {
+#        Name = "${var.environment}-subnet-rdsreplica"
+#        Environment = "${var.environment}"
 #        Version = "${var.version}"
-    }
-}
+#    }
+#}

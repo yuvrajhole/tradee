@@ -98,8 +98,13 @@ resource "aws_route_table_association" "rta_nat_gw_d1" {
 }
 
 
-resource "aws_route_table_association" "rta_nat_gw_e" {
-    subnet_id =             "${aws_subnet.subnet_private_rdsrr.id}"
+resource "aws_route_table_association" "rta_nat_gw_f" {
+    subnet_id =             "${aws_subnet.subnet_private_redis1.id}"
+    route_table_id =        "${aws_route_table.rt_nat_gw.id}"
+}
+
+resource "aws_route_table_association" "rta_nat_gw_f1" {
+    subnet_id =             "${aws_subnet.subnet_private_redis2.id}"
     route_table_id =        "${aws_route_table.rt_nat_gw.id}"
 }
 
