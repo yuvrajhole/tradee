@@ -1,0 +1,22 @@
+{
+    "Id":"Policy565960631719",
+    "Statement":
+    [
+
+        {
+            "Action":"s3:PutObject",
+            "Effect":"Allow",
+            "Principal":
+            {
+                "AWS":"arn:aws:iam::${alb_account_number}:root"
+            },
+            "Resource":
+            [
+                "arn:aws:s3:::${alb_logging_bucket}/ALB/API/AWSLogs/${aws_account_number}/*"
+            ],
+            "Sid":"Stmt565960631791"
+        }
+    ],
+    "Version":"2012-10-17"
+}
+
