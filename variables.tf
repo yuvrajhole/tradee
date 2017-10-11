@@ -6,7 +6,9 @@ variable "version" {
 
 variable "environment"      { default = "PROD"   description = "ENV" }
 variable "project"          { default = "TRADEE"   description = "PROJECT" }
-variable "aws_account_id"   { default = "123456789012" description = "replace with your aws account id" }
+variable "aws_account_id"   { default = "565960631719" description = "replace with your aws account id" }
+variable "aws_account_number"   { default = "565960631719" description = "replace with your aws account id" }
+
 variable "aws_account_name" { default = "electron" description = "replace with your aws account name" }
 
 
@@ -50,7 +52,13 @@ variable "ami" {
 variable "instance_type" {
     default = {
         bastion =   "t2.micro"
-        api =       "t2.micro"
+        api =       "t2.medium"
+        dbworker =  "t2.micro"
+        pushworker =  "t2.micro"
+        uploadimageworker =  "t2.micro"
+        redis =       "t2.medium"
+
+
     }
     description = "AWS instance type (must be compatible with corresponding AMI)"
 }
@@ -62,7 +70,7 @@ variable "ssh_user"      { default = "ubuntu"   description = "ssh user" }
 
 ##ALB Certificate ARN
 
-variable "web_ssl_certificate_id" { default =  "arn:aws:iam::187416307283:server-certificate/test_cert_rab3wuqwgja25ct3n4jdj2tzu4"}
+variable "web_ssl_certificate_id" { default =  "arn:aws:acm:eu-central-1:565960631719:certificate/cdc08e19-eb15-441e-98f5-f798b5736a45"}
 
 
 ### ASGs
@@ -73,3 +81,15 @@ variable "max_cluster_size_api"          { default = "0"   description = "max_si
 
 variable "health_check_grace_period"     { default = "300"   description = "health_check_grace_period" }
 variable "health_check_type"             { default = "EC2"   description = "EC2/ELB" }
+
+# ALB Account Numbers
+##http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html
+
+variable "alb_account_number" {
+    default = {
+        us-east-1 = "127311923021"
+        us-west-1 = "027434742980"
+	eu-central-1 = "054676820928"
+    }
+    description = "The account numbers for ALB logging by region"
+}

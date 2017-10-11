@@ -45,6 +45,11 @@ resource "aws_nat_gateway" "nat_gateway_a" {
         "aws_internet_gateway.igw_blaze",
         "aws_eip.elastic_ip_nat_gw"
     ]
+    tags {
+        Name = "${var.environment}_nat_gw"
+        Environment = "${var.environment}"
+#        Version = "${var.version}"
+    }
 }
 
 #resource "aws_nat_gateway" "nat_gateway_b" {

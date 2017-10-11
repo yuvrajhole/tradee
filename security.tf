@@ -130,6 +130,36 @@ resource "aws_security_group" "sg_worker" {
     }
 }
 
+# REDIS SG
+resource "aws_security_group" "sg_redis" {
+    description =       "Allows Access to redis"
+    name =              "${var.environment}_sg_redis"
+    vpc_id =            "${aws_vpc.vpc_blaze.id}"
+
+    # SSH
+    ingress {
+        from_port =     22
+        to_port =       22
+        protocol =      "tcp"
+        security_groups = ["${aws_security_group.sg_bastion.id}"]
+    }
+
+
+    egress {
+        from_port =     0
+        to_port =       0
+        protocol =      "-1"
+        cidr_blocks =   ["0.0.0.0/0"]
+    }
+
+    tags {
+        Name =          "${var.environment}_sg_redis"
+        Environment =   "${var.environment}"
+#        Version =       "${var.version}"
+    }
+}
+
+
 # BASE (for all instances)
 
 resource "aws_security_group" "vsg_base" {

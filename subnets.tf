@@ -57,10 +57,10 @@ resource "aws_subnet" "subnet_private_api2" {
 resource "aws_subnet" "subnet_private_redis1" {
     vpc_id = "${aws_vpc.vpc_blaze.id}"
     cidr_block = "${var.blaze_f}"
-    availability_zone = "${var.az_2}"
+    availability_zone = "${var.az_1}"
 
     tags {
-        Name = "${var.environment}-redis-1b"
+        Name = "${var.environment}-redis-1a"
         Environment = "${var.environment}"
 #        Version = "${var.version}"
     }
